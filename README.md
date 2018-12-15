@@ -1,24 +1,13 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Ruby version 2.4.5
 
-Things you may want to cover:
+* bundle and webpacker
 
-* Ruby version
+* run rails server and visit localhost:3000
 
-* System dependencies
+* PostgreSQL
 
-* Configuration
-
-* Database creation
-
-* Database initialization
+* rake db:create and rake db:migrate
 
 * How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
