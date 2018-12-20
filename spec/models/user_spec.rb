@@ -17,5 +17,5 @@ RSpec.describe User, type: :model do
     it "Is not valid without a password" do
       expect(no_password).to_not be_valid
     end
-  end 
+  end
 end
