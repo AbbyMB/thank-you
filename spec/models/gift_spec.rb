@@ -3,7 +3,8 @@ require_relative '../../app/models/gift'
 
 RSpec.describe Gift, type: :model do
   describe "valid gift" do
-    let!(:event) { Event.create(title: "Kiki's birthday", event_date: Date.parse("Apr 20 2019"), description: "Party to celebrate Kiki's birthday") }
+    let!(:user) { User.create(email: "bob@bob.com", password: "888888") }
+    let!(:event) { Event.create(title: "Kiki's birthday", event_date: Date.parse("Apr 20 2019"), description: "Party to celebrate Kiki's birthday", user_id: user.id) }
 
     it "Is valid with attributes" do
       gift_new = Gift.new(item: "collar", giver: "Missy", email: "missy@gmail.com", sent: false, event_id: event.id)
@@ -24,10 +25,5 @@ RSpec.describe Gift, type: :model do
       no_email = Gift.new(item: "collar", giver: "Missy", sent: false, event_id: event.id)
       expect(no_email).to be_valid
     end
-
-    # it "Is not valid without a sent" do
-    #   no_sent = Gift.new(item: "collar", giver: "Missy", email: "missy@gmail.com", event_id: event.id)
-    #   expect(no_sent).to_not be_valid
-    # end
   end
 end
