@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import EventTile from '../components/EventTile'
+import FormContainer from './FormContainer'
 
 class EventsContainer extends Component {
   constructor(props){
@@ -7,6 +8,7 @@ class EventsContainer extends Component {
     this.state = {
       events: []
     }
+  this.createNewEvent = this.createNewEvent.bind(this)
   }
 
   componentDidMount(){
@@ -28,6 +30,35 @@ class EventsContainer extends Component {
       .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
 
+  createNewEvent(formPayLoad){
+    let userId = window.currentUser.id
+    fetch(`/api/v1/users/${userId}/events`, {
+      method: 'POST',
+      body: JSON.stringify(formPayLoad),
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      credentials: 'same-origin'
+    })
+    .then(response => {
+      if (response.ok) {
+        return response;
+      } else {
+        let errorMessage = `${response.status} (${response.statusText})`,
+            error = new Error(errorMessage);
+        throw(error);
+      }
+    })
+    .then(response => response.json())
+    .then(newEvent => {
+      let allEvents = this.state.events
+      let addedEvent = newEvent.event
+      this.setState({ events: allEvents.concat(addedEvent)})
+    })
+    .catch(error => console.error(`Error in fetch: ${error.message}`));
+  }
+
   render(){
     let events = this.state.events.map(event => {
       return(
@@ -43,6 +74,9 @@ class EventsContainer extends Component {
     return(
       <div id="events">
         <h3>My Events</h3>
+        <FormContainer
+          createNewEvent={this.createNewEvent}
+        />
         {events}
       </div>
     )
