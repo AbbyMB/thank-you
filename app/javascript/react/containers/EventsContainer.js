@@ -24,7 +24,7 @@ class EventsContainer extends Component {
         }
       })
       .then(response => response.json())
-      .then(body => {
+      .then(body => { 
         this.setState({ events: body.user.events });
       })
       .catch(error => console.error(`Error in fetch: ${error.message}`));
