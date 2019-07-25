@@ -4089,6 +4089,7 @@ hasha@^2.2.0:
   dependencies:
     is-stream "^1.0.1"
     pinkie-promise "^2.0.0"
+
 history@^3.0.0:
   version "3.3.0"
   resolved "https://registry.yarnpkg.com/history/-/history-3.3.0.tgz#fcedcce8f12975371545d735461033579a6dae9c"
@@ -4098,6 +4099,7 @@ history@^3.0.0:
     loose-envify "^1.2.0"
     query-string "^4.2.2"
     warning "^3.0.0"
+
 hmac-drbg@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/hmac-drbg/-/hmac-drbg-1.0.1.tgz#d2745701025a6c775a6c545793ed502fc0c649a1"
@@ -5379,9 +5381,9 @@ lodash.merge@^4.4.0:
   integrity sha512-AOYza4+Hf5z1/0Hztxpm2/xiPZgi/cjMqdnKTUWTBSKchJlxXXuUSxCCl8rJlf4g6yww/j6mA8nC8Hw/EZWxKQ==
 
 lodash.mergewith@^4.6.0:
-  version "4.6.1"
-  resolved "https://registry.yarnpkg.com/lodash.mergewith/-/lodash.mergewith-4.6.1.tgz#639057e726c3afbdb3e7d42741caa8d6e4335927"
-  integrity sha512-eWw5r+PYICtEBgrBE5hhlT6aAa75f411bgDz/ZL2KZqYV03USvucsxcHUIlGTDTECs1eunpI7HOV7U+WLDvNdQ==
+  version "4.6.2"
+  resolved "https://registry.yarnpkg.com/lodash.mergewith/-/lodash.mergewith-4.6.2.tgz#617121f89ac55f59047c7aec1ccd6654c6590f55"
+  integrity sha512-GK3g5RPZWTRSeLSpgP8Xhra+pnjBC56q9FZYe1d5RN3TJ35dbkGy3YqBSMbyCrlbi+CM9Z3Jk5yTL7RCsqboyQ==
 
 lodash.pick@^4.2.1:
   version "4.4.0"
@@ -9234,6 +9236,7 @@ warning@^3.0.0:
   integrity sha1-MuU3fLVy3kqwR1O9+IIcAe1gW3w=
   dependencies:
     loose-envify "^1.0.0"
+
 watchpack@^1.4.0:
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/watchpack/-/watchpack-1.6.0.tgz#4bc12c2ebe8aa277a71f1d3f14d685c7b446cd00"
